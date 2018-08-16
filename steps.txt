@@ -1,0 +1,79 @@
+1.Download Node  from https://nodejs.org/en/download/
+2.npm install -g protractor
+3.webdriver-manager update
+4.webdriver-manager start --- Start server port 4444
+
+******************************************************************
+5.Set Run Configuration settings from Run as follows
+a.Click Noda.js application
+b.Click new lauch config(+)
+c.Give Name of that lauch
+d.Give the project name
+e.Save the Protractor folder in to the project
+f.Set the main path from browse with cli.js 
+"${workspace_loc:/ProtractorTutorial/protractor/built/cli.js}"
+g.Set Arguments-> Application name as configuration file name
+h.save
+
+6.Run
+*****************************************************************
+
+7.For Auto suggestions install Angularjs plug-in from market place and restart
+8.Right click on project -> Configure -> Convert to tern project which is designed to help javascript frameworks
+9.Select Protractor in the list
+10.Apply and close
+11.To get auto suggestion . and ctrl+space
+
+*****************************************************************
+Links to read more on promises
+
+https://spin.atomicobject.com/2014/12/17/asynchronous-testing-protractor-angular/
+
+https://www.sohamkamani.com/blog/2016/03/14/wrapping-your-head-around-async-programming/
+
+https://bridge360blog.com/2015/05/05/improving-protractor-tests-using-shared-functions-and-promises/
+
+*****************************************************************
+
+Protractor website:  https://www.protractortest.org/#/locators
+Jasmine assertions: ======== https://jasmine.github.io/2.0/introduction
+
+Note: 
+1.Promise will be handled internally when jasmine assertions are used
+2.Real output will display only when you resolve promise
+3.10% of promise handling is not done by protractor i.e., when using js functions such as console,getText..
+
+*****************************************************************
+
+Running tests in multiple browsers:
+
+1.By default it will run on chrome browser if you dont give anything in configuration file
+2.Capabilities can handle this 
+Go to the link for more details 
+https://www.protractortest.org/#/browser-setup
+
+3.IE drivers will not be downloaded by the command webdriver-manager update you should explicitly define like
+webdriver-manager update --ie
+
+*****************************************************************
+
+Running protractor for non angular then we have define this as first step from timeouts
+
+https://www.protractortest.org/#/timeouts:---->  browser.waitForAngularEnabled(false);
+
+or else it loads and checks for angular elements and fails the script if there are no ng elements
+
+*****************************************************************
+
+For handling wait time for non angular site we use "Expeced conditions"
+
+https://www.protractortest.org/#/api?view=ProtractorExpectedConditions
+
+*******************************************************************
+Assertion in Protractor:
+
+expect(element.all(by.css("div[ng-mouseover*='onSearchResultOver']")).count()).toEqual(7);
+********************************************************************
+
+
+
